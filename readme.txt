@@ -12,7 +12,7 @@ Automatic og:image and twitter:image for posts, pages and custom post types, ren
 
 == Description ==
 
-Support: support@ogmake.com. Source: https://github.com/IgorBaranov/ogmake-wordpress
+Support: support@ogmake.com. Source: https://github.com/ogmake/ogmake-wordpress
 
 
 Adds a social preview image to every post, page and enabled custom post type, built from the post title, excerpt, author and your site name.
