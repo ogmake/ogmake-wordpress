@@ -1,0 +1,15 @@
+{
+    "name": "ogmake/wordpress-ogmake",
+    "description": "WordPress plugin: automatic og:image via ogmake.",
+    "type": "wordpress-plugin",
+    "homepage": "https://ogmake.com",
+    "support": { "email": "support@ogmake.com", "source": "https://github.com/IgorBaranov/ogmake-wordpress" },
+    "license": "GPL-2.0-or-later",
+    "require": { "php": ">=7.4" },
+    "require-dev": {
+        "phpunit/phpunit": "^9.6",
+        "brain/monkey": "^2.6"
+    },
+    "scripts": { "test": "phpunit" },
+    "config": { "allow-plugins": {} }
+}
