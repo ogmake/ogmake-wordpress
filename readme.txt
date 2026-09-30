@@ -23,9 +23,13 @@ Adds a social preview image to every post, page and enabled custom post type, bu
 * Optional: keep the post's featured image when it has one.
 * Image URLs are cached in transients. All plugin data is removed on uninstall.
 
-= External service =
+== External services ==
 
-This plugin makes your visitors' browsers (and social networks) request images from the ogmake service (https://ogmake.com by default; configurable). The image URL contains the post title, excerpt (up to 200 characters), author name, date and site name so the image can be rendered. The plugin itself makes no HTTP requests from your server. You need an ogmake account and key: https://ogmake.com. Terms: https://ogmake.com/terms. Privacy policy: https://ogmake.com/privacy.
+This plugin relies on the ogmake image rendering service (https://ogmake.com by default; the address is configurable in Settings, ogmake) to generate the social preview images.
+
+What is sent, and when: the plugin adds an image URL to your page's `og:image` and `twitter:image` meta tags. When a visitor's browser, a social network or a search engine loads that URL, it requests the image from ogmake. The URL carries the post title (or your override), an excerpt of up to 200 characters, the author's display name, the publication date, your site name and the template name, so the image can be rendered. In API key mode the URL also carries a signature; the signing secret itself is never sent or printed. Password-protected posts send the title only. The plugin itself makes no HTTP requests from your server, and nothing is sent until a post is viewed.
+
+An ogmake account and key are required: https://ogmake.com. Terms of service: https://ogmake.com/terms. Privacy policy: https://ogmake.com/privacy. The plugin itself makes no HTTP requests from your server. You need an ogmake account and key: https://ogmake.com. Terms: https://ogmake.com/terms. Privacy policy: https://ogmake.com/privacy.
 
 == Installation ==
 
@@ -43,7 +47,20 @@ They are configured in your ogmake dashboard and apply to every image on your ac
 
 Their og:image is kept when present. Tick "Override" in the settings to replace it.
 
+= Does the plugin call ogmake from my server? =
+
+No. Only the browsers and crawlers that load your pages request the image. See the External services section.
+
+= What happens when I uninstall? =
+
+All plugin settings, per-post overrides and cached URLs are removed.
+
 == Changelog ==
 
 = 0.1.0 =
 * First release.
+
+== Upgrade Notice ==
+
+= 0.1.0 =
+First release.

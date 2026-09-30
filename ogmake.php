@@ -7,7 +7,6 @@
  * Requires at least: 5.8
  * Requires PHP:      7.4
  * Author:            ogmake
- * Author URI:        https://ogmake.com
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       ogmake-og-images
@@ -27,6 +26,15 @@ require_once OGMAKE_DIR . 'includes/class-ogmake-settings.php';
 require_once OGMAKE_DIR . 'includes/class-ogmake-url.php';
 require_once OGMAKE_DIR . 'includes/class-ogmake-frontend.php';
 require_once OGMAKE_DIR . 'includes/class-ogmake-metabox.php';
+
+/**
+ * Bump the cache generation so every cached URL is regenerated.
+ *
+ * @return void
+ */
+function ogmake_bump_cache_generation() {
+	update_option( 'ogmake_cache_gen', (int) get_option( 'ogmake_cache_gen', 0 ) + 1, false );
+}
 
 /**
  * Wire up hooks.

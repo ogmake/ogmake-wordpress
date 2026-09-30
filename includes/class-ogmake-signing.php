@@ -65,7 +65,7 @@ class Ogmake_Signing {
 			$byte = ord( $value[ $i ] );
 			if ( $byte < 0x80 ) {
 				$cp = $byte;
-				$i += 1;
+				++$i;
 			} elseif ( ( $byte & 0xE0 ) === 0xC0 && $i + 1 < $len ) {
 				$cp = ( ( $byte & 0x1F ) << 6 ) | ( ord( $value[ $i + 1 ] ) & 0x3F );
 				$i += 2;
@@ -77,7 +77,7 @@ class Ogmake_Signing {
 				$i += 4;
 			} else {
 				$cp = $byte;
-				$i += 1;
+				++$i;
 			}
 			if ( $cp > 0xFFFF ) {
 				$cp     -= 0x10000;

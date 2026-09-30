@@ -23,16 +23,16 @@ class Ogmake_Settings {
 	 */
 	public static function defaults() {
 		return array(
-			'mode'            => 'public', // 'public' (unsigned /p) or 'signed' (/i).
-			'base_url'        => 'https://ogmake.com',
-			'key_id'          => '',
-			'signing_secret'  => '',
-			'template'        => 'basic',
-			'background'      => '',
-			'site_name'       => '',
-			'override_seo'    => 0,
-			'use_featured'    => 0,
-			'post_types'      => array( 'post', 'page' ),
+			'mode'           => 'public', // 'public' (unsigned /p) or 'signed' (/i).
+			'base_url'       => 'https://ogmake.com',
+			'key_id'         => '',
+			'signing_secret' => '',
+			'template'       => 'basic',
+			'background'     => '',
+			'site_name'      => '',
+			'override_seo'   => 0,
+			'use_featured'   => 0,
+			'post_types'     => array( 'post', 'page' ),
 		);
 	}
 
@@ -100,20 +100,20 @@ class Ogmake_Settings {
 		$old   = self::get();
 		$out   = self::defaults();
 
-		$out['mode']         = ( isset( $input['mode'] ) && 'signed' === $input['mode'] ) ? 'signed' : 'public';
-		$base                = isset( $input['base_url'] ) ? esc_url_raw( trim( (string) $input['base_url'] ) ) : '';
-		$out['base_url']     = '' !== $base ? untrailingslashit( $base ) : $out['base_url'];
-		$out['key_id']       = isset( $input['key_id'] ) ? preg_replace( '/[^A-Za-z0-9_\-]/', '', (string) $input['key_id'] ) : '';
-		$secret              = isset( $input['signing_secret'] ) ? trim( (string) $input['signing_secret'] ) : '';
+		$out['mode']           = ( isset( $input['mode'] ) && 'signed' === $input['mode'] ) ? 'signed' : 'public';
+		$base                  = isset( $input['base_url'] ) ? esc_url_raw( trim( (string) $input['base_url'] ) ) : '';
+		$out['base_url']       = '' !== $base ? untrailingslashit( $base ) : $out['base_url'];
+		$out['key_id']         = isset( $input['key_id'] ) ? preg_replace( '/[^A-Za-z0-9_\-]/', '', (string) $input['key_id'] ) : '';
+		$secret                = isset( $input['signing_secret'] ) ? trim( (string) $input['signing_secret'] ) : '';
 		$out['signing_secret'] = '' !== $secret ? preg_replace( '/[^A-Za-z0-9+\/=]/', '', $secret ) : $old['signing_secret'];
-		$out['template']     = isset( $input['template'] ) ? sanitize_key( (string) $input['template'] ) : 'basic';
-		$out['template']     = '' !== $out['template'] ? $out['template'] : 'basic';
-		$out['background']   = isset( $input['background'] ) ? sanitize_key( (string) $input['background'] ) : '';
-		$out['site_name']    = isset( $input['site_name'] ) ? sanitize_text_field( (string) $input['site_name'] ) : '';
-		$out['override_seo'] = empty( $input['override_seo'] ) ? 0 : 1;
-		$out['use_featured'] = empty( $input['use_featured'] ) ? 0 : 1;
-		$types               = isset( $input['post_types'] ) && is_array( $input['post_types'] ) ? $input['post_types'] : array();
-		$out['post_types']   = array_values( array_map( 'sanitize_key', $types ) );
+		$out['template']       = isset( $input['template'] ) ? sanitize_key( (string) $input['template'] ) : 'basic';
+		$out['template']       = '' !== $out['template'] ? $out['template'] : 'basic';
+		$out['background']     = isset( $input['background'] ) ? sanitize_key( (string) $input['background'] ) : '';
+		$out['site_name']      = isset( $input['site_name'] ) ? sanitize_text_field( (string) $input['site_name'] ) : '';
+		$out['override_seo']   = empty( $input['override_seo'] ) ? 0 : 1;
+		$out['use_featured']   = empty( $input['use_featured'] ) ? 0 : 1;
+		$types                 = isset( $input['post_types'] ) && is_array( $input['post_types'] ) ? $input['post_types'] : array();
+		$out['post_types']     = array_values( array_map( 'sanitize_key', $types ) );
 
 		ogmake_bump_cache_generation();
 		return $out;

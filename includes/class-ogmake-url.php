@@ -103,19 +103,19 @@ class Ogmake_Url {
 		// post_password_required(), which is false for a visitor who already unlocked it.
 		$protected = '' !== (string) ( $post->post_password ?? '' );
 		if ( $protected ) {
-			$description = '';
+			$description   = '';
 			$default_title = (string) $post->post_title;
 		} else {
 			$description   = has_excerpt( $post ) ? get_the_excerpt( $post ) : wp_trim_words( $post->post_content, 30, '' );
 			$default_title = get_the_title( $post );
 		}
-		$fields   = array(
+		$fields = array(
 			'title'       => '' !== $title ? $title : $default_title,
 			'description' => $description,
 			'author'      => get_the_author_meta( 'display_name', (int) $post->post_author ),
 			'date'        => get_the_date( '', $post ),
 		);
-		$params   = self::params( $fields, $settings, get_bloginfo( 'name' ) );
+		$params = self::params( $fields, $settings, get_bloginfo( 'name' ) );
 
 		$key    = 'ogmake_' . md5( wp_json_encode( array( get_option( 'ogmake_cache_gen', 0 ), $post->ID, $template, $params, $settings['mode'], $settings['key_id'], $settings['base_url'] ) ) );
 		$cached = get_transient( $key );
@@ -128,13 +128,4 @@ class Ogmake_Url {
 		}
 		return $url;
 	}
-}
-
-/**
- * Bump the cache generation so every cached URL is regenerated.
- *
- * @return void
- */
-function ogmake_bump_cache_generation() {
-	update_option( 'ogmake_cache_gen', (int) get_option( 'ogmake_cache_gen', 0 ) + 1, false );
 }

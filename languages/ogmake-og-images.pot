@@ -1,0 +1,117 @@
+# Copyright (C) 2026 ogmake
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: ogmake OG Images 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ogmake-og-images\n"
+"POT-Creation-Date: 2026-09-29T00:00:00+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"X-Domain: ogmake-og-images\n"
+
+#: includes/class-ogmake-metabox.php:35
+msgid "ogmake social image"
+msgstr ""
+
+#: includes/class-ogmake-metabox.php:52
+msgid "Do not add an ogmake image"
+msgstr ""
+
+#: includes/class-ogmake-metabox.php:53
+msgid "Template (blank = default)"
+msgstr ""
+
+#: includes/class-ogmake-metabox.php:55
+msgid "Image title (blank = post title)"
+msgstr ""
+
+#: includes/class-ogmake-metabox.php:58
+msgid "Preview (as of the last save):"
+msgstr ""
+
+#: includes/class-ogmake-metabox.php:61
+msgid "Nothing to preview: opted out or not configured (Settings, ogmake)."
+msgstr ""
+
+#: includes/class-ogmake-settings.php:66 includes/class-ogmake-settings.php:137
+msgid "ogmake OG Images"
+msgstr ""
+
+#: includes/class-ogmake-settings.php:67
+msgid "ogmake"
+msgstr ""
+
+#: includes/class-ogmake-settings.php:142
+msgid "Mode"
+msgstr ""
+
+#: includes/class-ogmake-settings.php:144
+msgid "Public URL (key id only, no secret)"
+msgstr ""
+
+#: includes/class-ogmake-settings.php:145
+msgid "API key (signed URLs, secret stays on the server)"
+msgstr ""
+
+#: includes/class-ogmake-settings.php:149
+msgid "API base URL"
+msgstr ""
+
+#: includes/class-ogmake-settings.php:153
+msgid "Key id"
+msgstr ""
+
+#: includes/class-ogmake-settings.php:157
+msgid "Signing secret"
+msgstr ""
+
+#: includes/class-ogmake-settings.php:159
+msgid "Saved. Leave blank to keep."
+msgstr ""
+
+#: includes/class-ogmake-settings.php:160
+msgid "Only needed in API key mode. Never printed on the site."
+msgstr ""
+
+#: includes/class-ogmake-settings.php:164
+msgid "Default template"
+msgstr ""
+
+#: includes/class-ogmake-settings.php:167
+msgid "For example basic or blog. In public mode it must be on the key's allow-list."
+msgstr ""
+
+#: includes/class-ogmake-settings.php:171
+msgid "Background id"
+msgstr ""
+
+#: includes/class-ogmake-settings.php:174
+msgid "Optional curated background. Colors, fonts and your logo are set in your ogmake dashboard."
+msgstr ""
+
+#: includes/class-ogmake-settings.php:178
+msgid "Site name"
+msgstr ""
+
+#: includes/class-ogmake-settings.php:182
+msgid "Post types"
+msgstr ""
+
+#: includes/class-ogmake-settings.php:190
+msgid "Featured image"
+msgstr ""
+
+#: includes/class-ogmake-settings.php:191
+msgid "Keep the post's featured image as og:image when it has one"
+msgstr ""
+
+#: includes/class-ogmake-settings.php:194
+msgid "SEO plugins"
+msgstr ""
+
+#: includes/class-ogmake-settings.php:195
+msgid "Override the og:image set by Yoast SEO or Rank Math (off: they win when they have one)"
+msgstr ""
+
