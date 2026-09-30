@@ -33,7 +33,7 @@ An ogmake account and key are required: https://ogmake.com. Terms of service: ht
 
 == Installation ==
 
-1. Upload the plugin folder to `/wp-content/plugins/` and activate it.
+1. Download the latest release zip from https://github.com/ogmake/ogmake-wordpress/releases, upload it under Plugins > Add New > Upload Plugin (or unzip into `/wp-content/plugins/`) and activate it.
 2. Go to Settings, ogmake. Enter your key id (and signing secret for API key mode).
 3. Choose a default template and post types.
 
